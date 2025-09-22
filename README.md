@@ -25,5 +25,5 @@ This project is deployed at [https://movie-maze-feed.vercel.app](https://movie-m
 ## Production Build
 ```bash
 npm run build
-npm run preview
+npm run dev
 ```
