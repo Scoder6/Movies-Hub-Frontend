@@ -1,0 +1,210 @@
+/* Tailwind base imports - processed by PostCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom theme variables */
+@layer base {
+  :root {
+    /* Enhanced Light Mode */
+    --background: 0 0% 99%;
+    --foreground: 222.2 47.4% 11.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    
+    /* Primary - Vibrant Blue */
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Soft Blue-Gray */
+    --secondary: 215 16% 47%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent - Electric Blue */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Rating - Gold */
+    --rating: 43 96% 56%;
+    --rating-foreground: 0 0% 100%;
+    
+    /* Enhanced Shadows and Depth */
+    --shadow-movie: 0 20px 50px -20px hsl(var(--primary)/0.15);
+    --shadow-glow: 0 0 40px hsl(var(--accent)/0.1);
+    --shadow-card: 0 8px 30px -8px hsl(var(--primary)/0.05);
+    
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(217, 91%, 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(221, 83%, 53%));
+    --gradient-hero: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(217, 91%, 60%));
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(0, 0%, 98.5%));
+    
+    /* Muted - Clean Grays */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16.3% 46.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 210 40% 98%;
+    --ring: 221 83% 53%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark theme variables */
+    --background: 224 71% 8%;
+    --foreground: 210 20% 98%;
+    --card: 224 71% 6%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71% 6%;
+    --popover-foreground: 210 20% 98%;
+    
+    /* Primary - Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Dark Gray */
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 20% 98%;
+    
+    /* Accent - Lighter Blue */
+    --accent: 199 89% 55%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Movie Rating - Blue */
+    --rating: 217 91% 60%;
+    --rating-foreground: 0 0% 100%;
+    
+    /* Success - Bright Green */
+    --success: 142 76% 44%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Destructive - Bright Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 210 80% 60%;
+    
+    /* Enhanced Cinema Gradients for Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(199 89% 55%), hsl(221 83% 53%));
+    --gradient-hero: linear-gradient(135deg, hsl(224 71% 8%), hsl(224 71% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(224 71% 8%), hsl(224 71% 12%));
+    
+    /* Enhanced Shadows */
+    --shadow-movie: 0 15px 50px -10px hsl(217 91% 60% / 0.15);
+    --shadow-glow: 0 0 40px hsl(199 89% 55% / 0.2);
+    --shadow-card: 0 8px 30px -8px hsl(224 71% 4% / 0.4);
+  }
+}
+
+/* Custom utilities and animations */
+@layer utilities {
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Motion reduction */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    [class*='animate-'] { 
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Premium animations */
+  @keyframes premium-fade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes shimmer-premium {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  /* 3D effects */
+  .transform-3d {
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  .transform-3d:hover {
+    transform: perspective(1000px) rotateY(5deg) rotateX(5deg) scale(1.05);
+  }
+  
+  /* Add these new animations */
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes spin-slow-reverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes text-focus-in {
+    0% { filter: blur(4px); opacity: 0; }
+    100% { filter: blur(0); opacity: 1; }
+  }
+}
+
+/* Base styles using standard CSS (no @apply) */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  .dark body {
+    background-color: hsl(var(--background));
+  }
+
+  /* Enhanced animations and effects */
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--muted) / 0.4), transparent);
+    background-size: 200% 100%;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Enhanced focus states */
+  .focus-ring {
+    box-shadow: 0 0 0 2px hsl(var(--ring));
+  }
+
+  /* Loading shimmer background */
+  .shimmer-bg {
+    background: linear-gradient(90deg, transparent, hsl(var(--muted) / 0.6), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  /* Smooth scale transform */
+  .smooth-scale {
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .smooth-scale:hover {
+    transform: scale(1.05);
+  }
+}
